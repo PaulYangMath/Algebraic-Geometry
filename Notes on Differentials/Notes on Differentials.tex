@@ -1,0 +1,283 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{mathrsfs} 
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{latexsym} 
+%\usepackage{epsfig}
+%\usepackage{graphicx}
+%\usepackage[dvips]{graphicx}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+
+
+
+\usepackage[matrix,tips,graph,curve]{xy}
+
+\newcommand{\mnote}[1]{${}^*$\marginpar{\footnotesize ${}^*$#1}}
+\linespread{1.065}
+
+\makeatletter
+
+\setlength\@tempdima  {5.5in}
+\addtolength\@tempdima {-\textwidth}
+\addtolength\hoffset{-0.5\@tempdima}
+\setlength{\textwidth}{5.5in}
+\setlength{\textheight}{8.75in}
+\addtolength\voffset{-0.625in}
+
+\makeatother
+
+\makeatletter 
+\@addtoreset{equation}{section}
+\makeatother
+
+
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}[equation]{Theorem}
+\newtheorem{corollary}[equation]{Corollary}
+\newtheorem{lemma}[equation]{Lemma}
+\newtheorem{proposition}[equation]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[equation]{Definition}
+\newtheorem{definitions}[equation]{Definitions}
+%\theoremstyle{remark}
+
+\newtheorem{remark}[equation]{Remark}
+\newtheorem{remarks}[equation]{Remarks}
+\newtheorem{exercise}[equation]{Exercise}
+\newtheorem{example}[equation]{Example}
+\newtheorem{examples}[equation]{Examples}
+\newtheorem{notation}[equation]{Notation}
+\newtheorem{question}[equation]{Question}
+\newtheorem{assumption}[equation]{Assumption}
+\newtheorem*{claim}{Claim}
+\newtheorem{answer}[equation]{Answer}
+%%%%%% letters %%%%
+\newcommand{\sA}{\mathcal{A}}
+\newcommand{\sB}{\mathcal{B}}
+\newcommand{\sI}{\mathcal{I}}
+\newcommand{\sL}{\mathcal{L}}
+\newcommand{\sM}{\mathcal{M}}
+\newcommand{\sN}{\mathcal{N}}
+
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fb}{\mathfrak{b}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fn}{\mathfrak{n}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fq}{\mathfrak{q}}
+
+\newcommand{\IA}{\mathbb{A}}
+\newcommand{\IN}{\mathbb{N}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IP}{\mathbb{P}}
+\newcommand{\IZ}{\mathbb{Z}}
+
+\newcommand{\sO}{\mathcal{O}}
+
+\newcommand{\shF}{\mathscr{F}}
+\newcommand{\shG}{\mathscr{G}}
+\newcommand{\shI}{\mathscr{I}}
+\newcommand{\shK}{\mathscr{K}}
+\newcommand{\shN}{\mathscr{N}}
+\newcommand{\shT}{\mathscr{T}}
+
+%%%%%%% macros %%%%%
+
+%% my definitions %%%
+
+\newcommand{\End}{\mathrm{End}}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\Trace}{\mathrm{Trace}\,}
+\newcommand{\rank}{\mathrm{rank}}
+\newcommand{\corank}{\mathrm{corank}}
+\renewcommand{\deg}{\mathrm{deg}}
+\newcommand{\Spec}{\rm Spec\,}
+\newcommand{\Proj}{\rm Proj \,}
+\newcommand{\Sym}{\mathrm{Sym \,}}
+\newcommand{\Span}{\mathrm{Span \,}}
+\renewcommand\dim{{\rm dim\,}}
+\renewcommand\det{{\rm det\,}}
+
+\newcommand{\id}{\rm id}
+\newcommand\iso{{\, \cong \,}} 
+\newcommand\tensor{{\otimes}}
+\newcommand\Tensor{{\bigotimes}} 
+\newcommand\union{\bigcup} 
+\newcommand\onehalf{\frac{1}{2}}
+\newcommand\trivial{{\mathbb I}}
+\newcommand\wb{\overline}
+\newcommand\cl{\mathrm{cl}}
+\newcommand{\fd}{\mathfrak{d}}
+
+%%%%%Delimiters%%%%
+
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+
+%\renewcommand{\(}{\left(}
+%\renewcommand{\)}{\right)}
+
+
+%%%% Different kind of derivatives %%%%%
+
+\newcommand{\delbar}{\bar{\partial}}
+\newcommand{\pdu}{\frac{\partial}{\partial u}}
+%\newcommand{\pd}[1][2]{\frac{\partial #1}{\partial #2}}
+
+%%%%% Arrows %%%%%
+\newcommand{\induce}{\rightsquigarrow}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\onto}{\twoheadrightarrow}
+\newcommand{\tto}{\longmapsto}
+\def\llra{\longleftrightarrow}
+\def\wt{\widetilde}
+\def\wtilde{\widetilde}
+\def\what{\widehat}
+\def\bf{\textbf}
+\def\it{\textit}
+%%%%%%%%%%%%%%%%%%% Ziquan's definitions %%%%%%%%%%%%%%%%%%%%
+\newcommand{\Ann}{\mathrm{Ann}}
+\newcommand{\height}{\mathrm{height \,}}
+\newcommand{\Div}{\mathrm{Div}}
+\newcommand{\sE}{\mathcal{E}}
+\newcommand{\p}{\partial}
+\newcommand{\sing}{\mathrm{sing}}
+\newcommand{\grad}{\mathrm{grad}\,}
+\newcommand{\dirlim}{\varinjlim}
+\newcommand{\Cl}{\mathrm{Cl}}
+\newcommand{\divisor}{\mathrm{div}}
+\newcommand{\codim}{\mathrm{codim}}
+\newcommand{\Ohm}{\Omega}
+\newcommand{\st}{\mathrm{s.t.}\,}
+\newcommand{\supp}{\mathrm{supp}\,}
+\newcommand{\w}{\omega}
+%%%%%%%%%%%%% new definitions for the positive mass paper %%%%%%%%%
+
+\newcommand{\sperp}{{\scriptscriptstyle \perp}}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%
+\begin{document}
+%
+
+\title{Notes on Differentials}
+\author{Ziquan Yang}
+
+
+\date{\today}
+
+\maketitle
+
+ 
+
+%\setcounter{secnumdepth}{1} 
+
+\setcounter{section}{0}
+
+\paragraph{Algebraic Facts} Recall that in differential geometry we defined tangent vectors as derivations of functions. 
+
+Let $B$ be an $A$-algebra and $M$ be an $A$-module. An $A$-derivation of $B$ into $M$ is an additive map $d : B \to M$ that is zero on $A$ and satisfies the Leibniz condition $d(bb') = b db' + b' db$. 
+
+The module of relative differential forms $\Ohm_{B/A}$ of $B$ over $A$ is an object that satisfies a universal property: we have a derivation $d : B \to \Ohm_{B/A}$ such that if $d : B \to M$ is some other derivation, then it factors through $d$. We may easily construct $\Ohm_{B/A}$ using symbols $\{ df : f \in B \}$ modulo a bunch of equivalence relations. This is also how Silverman constructed the differentials in ``Arithmetic of Elliptic Curves". 
+
+An alternative construction is: Let $f : B \tensor_A B \to B$ be the diagonal homomorphism $b \tensor b' \mapsto bb'$ and let $I = \ker f$. Consider $B \tensor_A B$ as a $B$-module by multiplication of the left. (Note that specifying this point is important since the tensor product is taken over $A$ instead of $B$.) Then $I/I^2$ inherits a structure of $B$-module. Define a map $d : B \to I/I^2$ by $db = 1 \tensor b - b \tensor 1$. Then $\< I/I^2, d\>$ is a module of relative differentials. 
+
+To show that this construction makes sense, let us check briefly that $d$ is a derivation:
+$$ dbb' = 1 \tensor bb' - bb' \tensor 1, \, bdb' + b' db = bb' \tensor 1 - b \tensor b' + bb' \tensor 1 - b' \tensor b$$
+\begin{align*} 
+bdb' + b' db - dbb' &= b \tensor b' + b' \tensor b - bb' \tensor 1 - 1 \tensor bb' \\
+&= (b \tensor 1 - 1 \tensor b)(1 \tensor b' - b' \tensor 1) \in I^2 
+\end{align*}
+
+\paragraph{Geometric Picture} 
+Note that in particular $\Ohm_{B/A}$ is a $B$-module. The geometric interpretation of $\Ohm_{B/A}$ are, in fact, relative differential forms. A picture in mind would be: Let $\pi : X \to Y$ be a smooth submersion. Each point $x \in X$ lies on some fiber $\pi^{-1}(y)$. The fiber $\pi^{-1}(y)$ is a manifold and its tangent space is in particular a subspace of $T_x X$. Now these tangent spaces glue up to give a sub-bundle of the tangent bundle of $X$. In order to consider the whole (co)tangent bundle of $X$ we can take $Y$ to be a point. Then the relative notion coincides with our absolute notion. Note that if $\Spec B \to \Spec A$ is some type of inclusion, (e.g. $B = A/I$ or $B = S^{-1} A$), then $\Ohm_{B/A} = 0$. Well, this is intuive geometrically, since there is no ``vertical tangent vectors".  
+
+
+\paragraph{A Concrete Example} Let $A = k, B = k[x, y]/(y^2 - x^3 - x)$. Since $\Spec A$ is just a point, $\Ohm_{B/A}$ is just what we normally think of as the cotangent vectors. The $B$-module $\Ohm_{B/k}$ already gives us a sheaf of of modules $\wt{\Ohm}_{B/A}$ over $\Spec B$. We want to think of the sheaf $\wt{\Ohm}_{B/A}$ as the cotangent bundle. In particular, it should be a line bundle as $\Spec B$ is a smooth affine elliptic curve. This is indeed the case. We can write down the module explicitly as
+$$ \Ohm_{B/k} = B\< dx, dy \>/( 2y dy - (3 x^2 + 1)dx) $$
+When $y \neq 0$, we may write 
+$$ dy = \frac{3 x^2 + 1}{2y} dx$$
+Therefore $\Ohm_{B/k}$ is generated by $dx$. More formally, we have that
+\begin{align*} B_{(y)} \tensor_B \Ohm_{B/k} &= B_{(y)} \< dx, dy \>/( 2y dy - (3 x^2 + 1)dx)_{(y)} \\
+&= B_{(y)} \< dx, dy \>/( dy - ((3 x^2 + 1)/2y)dx)_{(y)} \\
+&= B_{(y)} \< dx \>
+\end{align*}
+That is, $B_{(y)} \tensor \Ohm_{B/k}$ is a rank $1$ free $B_{(y)}$-module. Similarly, $B_{(3x^2 + 1)} \tensor \Ohm_{B/k}$ is a rank $1$ free $B_{(3x^2 + 1)}$-module. Note that $\Spec B_{(y)}$ and $\Spec B_{(3x^2 + 1)}$ cover $\Spec B$. Therefore $\Ohm_{B/k}$ is indeed an invertible sheaf over $\Spec B$. We also note that we have the luxury that $\Spec B_{(y)}$ and $\Spec B_{(3x^2 + 1)}$ cover $\Spec B$ precisely because $\Spec B$ is smooth. 
+
+\paragraph{First Exact Sequence} If $A \to B \to C$ are ring homomorphisms, then there is a natural exact sequence 
+$$ C \tensor_B \Ohm_{B/A} \to \Ohm_{C/A} \to \Ohm_{C/B} \to 0 $$
+where the first map is given by $a \tensor db \mapsto a db$ and the second by $dc \mapsto dc$. We first prove it algebraically and then explain the geometric meaning. 
+The surjectivity at the end is clear. The composed map $a \tensor db \mapsto db \in \Ohm_{C/B}$ is zero since $db = 0$ in $\Ohm_{C/B}$. Note that $\Ohm_{C/A}$ and $\Ohm_{C/B}$ are both generated by symbols $dc$, except that we have extra relations $db = 0$ in $\Ohm_{C/B}$. These relations lie precisely in the image $C \tensor_B \Ohm_{B/A} \to \Ohm_{C/A}$. Therefore $\Ohm_{C/B}$ is indeed the cokernel of the first map. To explain the geometric interpretation, we set $A = k, B = k[x], C = k[x, y]$. Therefore we identify $\IA^2 = \Spec C$, $\IA^1 = \Spec B$ is the $x$-axis and $(0, 0) = \Spec A$ is the origin. The inclusion $B \subseteq C$ corresponds to the projection map $\pi : \IA^2 \to \IA^1$. $$C \tensor_B \Ohm_{B/A} = k[x, y] \tensor_{k[x]} k[x] \< dx \> $$ What $C \tensor_B \Ohm_{B/A} \to \Ohm_{C/A}$ does is nothing but thinking of $\pi^* dx$, which is again denoted by $dx$, as a 1-form on $\IA^2$. We can see that 
+$$\Ohm_{C/A} \to \Ohm_{C/B}/(C \tensor_B \Ohm_{B/A}) = k[x, y]\< dx, dy \> / k[x, y]\< dx \> = k[x, y] \< dy \> = \Ohm_{C/B}$$ 
+which are indeed the differentials on the fibers. We also see that in our case we actually have $ 0 \to C \tensor_B \Ohm_{B/A} \to \Ohm_{C/A}$. This is true in nice smooth conditions in general, which we shall address later.
+
+
+\paragraph{Second Exact Sequence} It is also called the conormal exact sequence. Again suppose $B$ is an $A$-algebra. Let $I \subseteq B$ be an ideal and $C = B/I$. There is a natural exact sequence 
+$$ I/I^2 \stackrel{\delta}{\to} \Ohm_{B/A} \tensor_B C \to \Ohm_{C/A} \to 0 $$ where $\delta$ is given by $i \mapsto di \tensor 1$. 
+The algebraic proof is not hard. $\Ohm_{B/A}$ are generated by symbols $dc$ subject to three relations $da = 0$, additivity and Leibniz rule. $\Ohm_{C/A}$ are defined similarly, exactly they are subject to more relations: $d i = 0$, $i \in I$. Therefore $\Ohm_{C/A}$ is naturally identified with the cokernel of $I/I^2 \stackrel{\delta}{\to} \Ohm_{B/A}$. 
+
+We should think of $\tensor_B C$ as ``evaluating the functions in $B$ at $\Spec B/I$", so $\Ohm_{B/A} \tensor_B C$ are differentials restricted to $\Spec C$. $\Ohm_{C/A}$ are differentials on $\Spec C$, so they miss out those differentials in $\Ohm_{B/A} \tensor_B C$ that are ``normal to $\Spec C$". The iamge of $I/I^2$ in $\Ohm_{B/A} \tensor_B C$ are exactly these differentials. 
+
+\paragraph{The Conormal Bundle}
+Here I try to explain why it makes sense to call (the sheaf associated to) $I/I^2$ the conormal bundle of $\Spec B/I$ in $\Spec B$. Suppose $X, Y$ are manifolds and $\iota : X \into Y$ be an embedding. Let $p \in X$ be a point and $I_p$ be the stalk of functions defined on some neighborhood $U$ of $p$ vanishing on $U \cap X$. The normal bundle $\shN_{Y/X}$ is in particular a sub-bundle of $\iota^* \shT_{Y}$. $\iota^* \shT_{Y}|_p$ are derivations at $p$. $\shN_{Y/X}|_p$ are those that will not capture the rate of change of functions in the directions tangent to $X$ at $p$. However, $I_p$ contains precisely those functions who do not vary in the directions tangent to $X$ at $p$ (of course, any other such functions differ from $I_p$ by at most a constant). The Leibniz rule says that the derivations in $\shN_{Y/X}|_p$ will be zero on $I^2$. Therefore $I_p/I_p^2$ maps $\shN_{Y/X}|_p$ to scalars. In an algebraic geometric setting, we get $I_p$ from $I$ precisely by localizing at $p$. Therefore the sheaf $\wt{I/I^2}$ is precisely what we want to call the conormal bundle.  
+
+\paragraph{Forms or Functions?}
+Note that in differential geometry, both forms and functions (modulo some ideal) are objects that eat derivations and spit scalars. Which should be thought of as the dual of derivations (tangent vectors)? In fact, they are the same, as the action of functions on derivations factors through differentials. More precisely, suppose we are in $\IR^n$ with coordinates $x_1, \cdots, x_n$ and a smooth function $f$. We can let $f$ act on derivations directly: 
+$$ f(\frac{\p}{\p x_i}) = \frac{\p f}{\p x_i} $$
+Alternatively, we can make $f$ into the differential $df$ first, 
+$$ df = \sum_{j = 1}^n \frac{\p f}{\p x_j} dx_j $$
+and then act on derivations: 
+$$ df(\frac{\p}{\p x_i}) = (\sum_{j = 1}^n \frac{\p f}{\p x_j} dx_j)(\frac{\p}{\p x_i}) = \frac{\p f}{\p x_i} $$
+
+\paragraph{Pullback of Differentials}
+Suppose we have a commutative diagram of ring homomophisms: 
+\begin{center}
+\begin{tikzcd}
+A \arrow{d}{} \arrow{r}{} & A' \arrow{d}{} \\
+B \arrow{r}{}  & B'
+\end{tikzcd}
+\end{center}
+Then there is natural homomorphism $B' \tensor_B \Ohm_{B/A} \to \Ohm_{B'/A'}$ given by $b' \tensor db \mapsto b' db$, where we interpret $db$ as in $\Ohm_{B'/A'}$. When the diagram is a fiber diagram, i.e. $B' = A' \tensor_A B$, then the map is in fact an isomorphism. 
+
+
+
+\paragraph{A Global Construction} So far we have studied differentials on affine schemes. We could have glue up these local constructions to obtain a global construction, but instead we give a global construction all at once and then observe that locally it agrees with what we have been doing. Let $M$ be a manifold and $\Delta : M \to M \times M$ be the diagonal map. Then we have a sequence:
+$$ 0 \to \shT_\Delta \to \shT_{M \times M}|_{\Delta} \to \shN_{\Delta/M \times M} \to 0$$
+$\shN_{\Delta/M \times M}$ is isomorphic to $\shT_M$ via the isomorphism $\Delta : M \to \Delta(M)$. Since we know how to define the conormal bundle, we want to pull it back to $M$ to give a definition for cotangent bundle. 
+
+In algebraic geometric setting, recall that $\Delta(X)$ is a locally closed subset of $X \times_Y X$, i.e. it is a closed subscheme of some open subscheme $W$ of $X \times_Y X$. Let $\shI$ be the sheaf of ideals of $\Delta(X)$ in $W$. We define the relative differentials of $X$ over $Y$ to be the sheaf $\Ohm_{X/Y} = \Delta^*(\shI / \shI^2)$. 
+
+\paragraph{Rethink Smoothness} As we can see from the concrete example, smoothness plays an important role is guaranteeing that the ``cotangent bundle" is locally free. The converse is also true. Now we treat this phenomenon in more generality. 
+
+
+\paragraph{Geometric Genus} In differential geometry we often study forms of top degree because we can integrate them. Let $X$ be a nonsingular variety over $k$. We define the canonical sheaf of $X$ to be $\w_X = \wedge^n \, \Ohm_{X/k}$, where $n = \dim X$. It is a line bundle. If $X$ is projective and nonsingular, then we define the geometric genus of $X$ by $p_g = \dim_k \Gamma(X, \w_X)$. Note that by Theorem II.5.19 in [Hart], $\Gamma(X, \w_X)$ is a finite dimensional vector space. Therefore $p_g$ is a nonnegative integer. The geometric genus plays an important role in classification problems because it is invariant under birational equivalence: Let $X, X'$ be two birationally equivalent nonsingular projective varieties over $k$. Then $p_g(X) = p_g(X')$. 
+
+The proof uses properness, so we briefly recall the valuative criterion of properness. In fact, it may be the first incidence for me to see why the notion of properness is useful. (Of course, I have see the notion of properness in topology and its usefulness, but I am still not sure how the two notions relate to each other.) A morphism $f : X \to Y$ is proper if for every valuation ring $R$ with fraction field $K$, $T = \Spec R, U = \Spec K$ and a commutative diagram 
+\begin{center}
+\begin{tikzcd}
+U \arrow{d}{i} \arrow{r}{} & X \arrow{d}{f} \\
+T \arrow{r}{}  & Y
+\end{tikzcd}
+\end{center}
+Then there exists a unique morphism $T \to X$ such that the diagram commutes. 
+
+Let $V \subseteq X$ be the largest open subset such that there is a morphism $f : V \to X'$ representing the rational map. By Corollary I.4.5 [Hart], there is an open subset $U \subseteq V$ such that $f(U)$ is open in $X'$. Now we have a pullback map on differentials $f^* \Ohm_{X'/k} \to \Ohm_{V/k}$. (Recall that pullbacks of morphisms commute with tensor products.) Since $f$ induces an isomorphism from $U$ to $f(U)$, we have that $\w_V |_U \iso \w_{X'}|_{f(U)}$. A nonzero global section of an invertible sheaf cannot vanish on an open dense susbet, so we have that $f^* : \Gamma(X', \w_{X'}) \to \Gamma(V, \w_V)$ is injective. 
+
+Now we need to compare $\Gamma(V, \w_V)$ with $\Gamma(X,\w_X)$. We claim that $\codim_X(X - U) \ge 2$. (Now we see the usefulness to assume the maximality of $V$.) If $P \in X$ is a point of codimension $1$ (i.e. it is the generic point of some prime divisor), then $\sO_{P, X}$ is a DVR, since $X$ is assumed to be nonsingular. Note that the fraction field of $\sO_{P, X}$ is $K(X)$, which is isomorphic to $K(X')$ via $f$. Since $X' \to \Spec k$ is assumed to be proper, we have an extension $\Spec \sO_{P, X} \to X'$ compatible with the given birational map. It extends to a morphism of $P$ to $X'$, so we have $P \in V$. 
+
+Finally since $\codim_X(X - V) \ge 2$, we can prove that the restriction $\Gamma(X, \w_X) \to \Gamma(V, \w_V)$ is bijective. Therefore we have proved that $p_g(X') \le p_g(X)$. By symmetry of above arguments, we have $p_g(X) = p_g(X')$. 
+
+\end{document}

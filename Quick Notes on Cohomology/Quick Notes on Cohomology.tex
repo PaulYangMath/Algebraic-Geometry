@@ -1,0 +1,371 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{mathrsfs} 
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{latexsym} 
+%\usepackage{epsfig}
+%\usepackage{graphicx}
+%\usepackage[dvips]{graphicx}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+
+
+
+\usepackage[matrix,tips,graph,curve]{xy}
+
+\newcommand{\mnote}[1]{${}^*$\marginpar{\footnotesize ${}^*$#1}}
+\linespread{1.065}
+
+\makeatletter
+
+\setlength\@tempdima  {5.5in}
+\addtolength\@tempdima {-\textwidth}
+\addtolength\hoffset{-0.5\@tempdima}
+\setlength{\textwidth}{5.5in}
+\setlength{\textheight}{8.75in}
+\addtolength\voffset{-0.625in}
+
+\makeatother
+
+\makeatletter 
+\@addtoreset{equation}{section}
+\makeatother
+
+
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}[equation]{Theorem}
+\newtheorem{corollary}[equation]{Corollary}
+\newtheorem{lemma}[equation]{Lemma}
+\newtheorem{proposition}[equation]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[equation]{Definition}
+\newtheorem{definitions}[equation]{Definitions}
+%\theoremstyle{remark}
+
+\newtheorem{remark}[equation]{Remark}
+\newtheorem{remarks}[equation]{Remarks}
+\newtheorem{exercise}[equation]{Exercise}
+\newtheorem{example}[equation]{Example}
+\newtheorem{examples}[equation]{Examples}
+\newtheorem{notation}[equation]{Notation}
+\newtheorem{question}[equation]{Question}
+\newtheorem{assumption}[equation]{Assumption}
+\newtheorem*{claim}{Claim}
+\newtheorem{answer}[equation]{Answer}
+%%%%%% letters %%%%
+\newcommand{\sA}{\mathcal{A}}
+\newcommand{\sB}{\mathcal{B}}
+\newcommand{\sI}{\mathcal{I}}
+\newcommand{\sL}{\mathcal{L}}
+\newcommand{\sM}{\mathcal{M}}
+\newcommand{\sN}{\mathcal{N}}
+\newcommand{\sU}{\mathcal{U}}
+
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fb}{\mathfrak{b}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fn}{\mathfrak{n}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fq}{\mathfrak{q}}
+
+\newcommand{\IA}{\mathbb{A}}
+\newcommand{\IN}{\mathbb{N}}
+\newcommand{\IP}{\mathbb{P}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IZ}{\mathbb{Z}}
+
+\newcommand{\sO}{\mathcal{O}}
+
+\newcommand{\shC}{\mathscr{C}}
+\newcommand{\shF}{\mathscr{F}}
+\newcommand{\shG}{\mathscr{G}}
+\newcommand{\shI}{\mathscr{I}}
+\newcommand{\shK}{\mathscr{K}}
+\newcommand{\shR}{\mathscr{R}}
+%%%%%%% macros %%%%%
+
+%% my definitions %%%
+
+\newcommand{\End}{\mathrm{End}}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\Trace}{\mathrm{Trace}\,}
+\newcommand{\rank}{\mathrm{rank}}
+\newcommand{\corank}{\mathrm{corank}}
+\renewcommand{\deg}{\mathrm{deg}}
+\newcommand{\Spec}{\rm Spec\,}
+\newcommand{\Proj}{\rm Proj \,}
+\newcommand{\Sym}{\mathrm{Sym \,}}
+\newcommand{\Span}{\mathrm{Span \,}}
+\renewcommand\dim{{\rm dim\,}}
+\renewcommand\det{{\rm det\,}}
+
+\newcommand{\id}{\rm id}
+\newcommand\iso{{\, \cong \,}} 
+\newcommand\tensor{{\otimes}}
+\newcommand\Tensor{{\bigotimes}} 
+\newcommand\union{\bigcup} 
+\newcommand\onehalf{\frac{1}{2}}
+\newcommand\trivial{{\mathbb I}}
+\newcommand\wb{\overline}
+\newcommand\cl{\mathrm{cl}}
+\newcommand{\fd}{\mathfrak{d}}
+
+%%%%%Delimiters%%%%
+
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+
+%\renewcommand{\(}{\left(}
+%\renewcommand{\)}{\right)}
+
+
+%%%% Different kind of derivatives %%%%%
+
+\newcommand{\delbar}{\bar{\partial}}
+\newcommand{\pdu}{\frac{\partial}{\partial u}}
+%\newcommand{\pd}[1][2]{\frac{\partial #1}{\partial #2}}
+
+%%%%% Arrows %%%%%
+\newcommand{\induce}{\rightsquigarrow}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\onto}{\twoheadrightarrow}
+\newcommand{\tto}{\longmapsto}
+\def\llra{\longleftrightarrow}
+\def\wt{\widetilde}
+\def\wtilde{\widetilde}
+\def\what{\widehat}
+\def\bf{\textbf}
+\def\it{\textit}
+%%%%%%%%%%%%%%%%%%% Ziquan's definitions %%%%%%%%%%%%%%%%%%%%
+\newcommand{\Ann}{\mathrm{Ann}}
+\newcommand{\height}{\mathrm{height \,}}
+\newcommand{\Div}{\mathrm{Div}}
+\newcommand{\sE}{\mathcal{E}}
+\newcommand{\p}{\partial}
+\newcommand{\sing}{\mathrm{sing}}
+\newcommand{\grad}{\mathrm{grad}\,}
+\newcommand{\dirlim}{\varinjlim}
+\newcommand{\Cl}{\mathrm{Cl}}
+\newcommand{\divisor}{\mathrm{div}}
+\newcommand{\codim}{\mathrm{codim}}
+\newcommand{\Ohm}{\Omega}
+\newcommand{\st}{\mathrm{s.t.}\,}
+\newcommand{\supp}{\mathrm{supp}\,}
+
+\newcommand{\sm}{\varepsilon}
+\newcommand{\Mod}{\mathfrak{Mod}}
+\newcommand{\Ab}{\mathfrak{Ab}}
+\newcommand{\Cech}{\v{C}ech\,}
+\newcommand{\im}{\mathrm{im}\,}
+\newcommand{\cH}{\check{H}}
+%%%%%%%%%%%%% new definitions for the positive mass paper %%%%%%%%%
+
+\newcommand{\sperp}{{\scriptscriptstyle \perp}}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%
+\begin{document}
+%
+
+\title{Quick Notes on Cohomology}
+\author{Ziquan Yang}
+
+
+\date{\today}
+
+\maketitle
+
+\textsl{These are some quick notes cohomology. The main point is to have sense of the relationships between some important concepts. Many proofs of the facts from commutative algebra or category theory are sketchy or skipped.}
+ 
+
+%\setcounter{secnumdepth}{1} 
+
+\setcounter{section}{0}
+\paragraph{Categorical nonsense}
+Let $\sU$ be a category. An object $I$ is called injective if $\Hom(\cdot, I)$ is exact. (Recall that in the general case it is always left-exact.) If every object is isomorphic to a subobject of an injective, then the category is said to have enough injectives. 
+
+An injective resolution of of an object $A$ is a complex $I^\cdot$, defined in degrees $i \ge 0$ , together with a morphism $\sm : A \to I^0$ such that each $I^i$ is injective and the sequence 
+$$ 0 \to A \to I^0 \to I^1 \to I^2 \to \cdots $$
+is exact. 
+
+Let $\sU$ be a category of enough injectives and $F : \sU \to \sB$ be a left exact functor of abelian categories. For each object $A$ of $\sU$, we choose once and for all an injective resolution of $A$. We constant the right derived functors $R^i F$, $i \ge 0$ as $R^i F = h^i (F(I^\cdot))$. This is well defined since any two injective resolutions are homotopy equivalent. Each $R^i F$ is a functor from $\sU$ to $\sB$. There is a natural isomorphism $F \iso R^0 F$. 
+
+For each s.e.s. $0 \to A' \to A \to A'' \to 0$ and for each $i \ge 0$, there is a natural morphism $\delta^i : R^i F (A'') \to R^{ i + 1} F(A')$ such that we obtain a l.e.s:
+$$ \cdots \to R^i F(A') \to R^i F(A) \to R^i F (A'') \to R^{i + 1} F (A') \to R^{i + 1} F(A) \to \cdots $$
+In particular, note that the morphisms in the above sequence come from category $\sB$. The connecting morphism $\delta^i$ is natural. 
+
+For each injective object $I$ of $\sU$, and for each $i > 0$, we have $R^i F (I) = 0$. This should be clear, since $0 \to I \to I \to 0 \to 0 \to \cdots $ is already an injective resolution of $I$. 
+
+An object $J$ of $\sU$ is called acyclic for $F$ if $R^i F = 0 $ for all $i > 0$. In particular, injective objects are acyclic. In defining the right exact functors, it suffices to use an acyclic resolution and we would obtain the same functors. 
+
+Now we talk about a universal property of derived functors. As we see in the above, the data of a derived functors consist of $R^i F$'s and connecting morphisms. We can abstractly define such data set. A $\delta$-functor form $\sU$ to $\sB$ is a collection of functors $T^i, i \ge 0$, together with a morphism $\delta^i : T^i(A'') \to T^{i + 1}(A)$ for each s.e.s $0 \to A' \to A \to A'' \to 0$ such that we obtain a long exact sequence like before and the connecting morphism is natural with respect to morphisms of short exact sequeneces. 
+
+The $\delta$-functor $T = (T^i) : \sU \to \sB$ is said to be universal if, given any other $\delta$-functor $T' = (T'^i) : \sU \to \sB$, and given any morphism of functors $f^0 : T^0 \to T'^0$, ther exists a unique sequence of morphisms $f^i : T^i \to T'^i$ for each $i \ge 0$ starting with $f^0$, which commute with the $\delta^i$ for each short exact sequence. 
+
+Additive functor $F$ is called effaceable if for each $A$ there is some $u : A \into M$ such that $F(u) : F(A) \to_0 F(M)$. A $\delta$-functor $T = (T^i) : \sU \to \sB$ is universal if each $T^i, i > 0$ is effaceable. 
+
+If $\sU$ has enough injectives and $F$ is a covariant functor as before, then functors $ (R^i F)_{i \ge 0} $ defined as above form a universal $\delta$-functor with $F \iso R^0 F$. Conversely, if a $\delta$-functor is universal, then we can recover it by taking $R^i T^0$. Well, since each object is a subobject of an injective, it is easy to check that $ (R^i F)_{i \ge 0} $ is effaceable. The second statement follows from standard universal property argument. 
+
+Let $(X, \sO_X)$ be a ringed space, then the category $\Mod(X)$ of sheaves of $\sO_X$-modules has enough injectives. (Take for granted now.) Let $X$ be a topological space, the category $\Ab(X)$ of sheaves of abelian groups on $X$ has enough injectives. 
+
+Let $X$ be a topological space. We define the cohomology functors $H^i(X, \cdot)$ to be the right derived functors of the functor $\Gamma(X, \cdot)$ from $\Ab(X)$ to $\Ab$. 
+
+Recall that a sheaf $\shF$ on a topological space $X$ is flasque if for every inclusion of open sets $V \subseteq U$, the restriction map $\shF(U) \to \shF(V)$ is surjective. \textit{An easy nonexample is: the sheaf of continuous functions on $\IR$ is clearly not flasque since there are functions that are continuous functions of $(0, 1)$ and cannot be extended continuously any further. In a flasque sheaf any local functions are restrictions of global functions, which strikes me as a bit weird.} Any injective $\sO_X$-module is flasque. If $\shF$ is a flasque sheaf on a topological space $X$, then $H^i(X, \shF) = 0$ for all $i > 0$. \textit{Ok, this makes some intuitive sense, since cohomology are meant to measure some lack of functions. But a flasque sheaf seems to have ``too many functions".} In particular, this shows that flasque sheaves are acyclic. 
+
+Now to view an $\sO_X$-module simply as an element in $\Ab(X)$, we are forgetting its additional structures. If we instead define $H^i(X, \shF)$ by taking injective resolution of $\shF$ in $\Mod(X)$, which is a proper subcategory of $\Ab(X)$, we do not a priori get the same right derived functors. However, since any injective is flasque, and every flasque is acyclic, so resolution by injectives in $\Mod(X)$ gives the usual cohomology functors. 
+
+\paragraph{Grothendieck vanishing theorem}
+
+Let $X$ be a noetherian topological space of dimension $n$. Then for all $i > 0$ and all sheaves of abelian groups $\shF$ on $X$, we have $H^i(X, \shF) = 0$. 
+
+The main tool here is direct limit. If $(\shF_\alpha)$ is a direct system of sheaves on $X$, then we can define the direct limit $\dirlim \shF_\alpha$. In general we first define a direct limit presheaf on a topological space $X$ by $U \mapsto \dirlim \shF_i(U)$. If $X$ is in addition noetherian, then this presheaf is already a sheaf, which we call the direct limit sheaf. In particular, for every open subset $U \subseteq X$, we have 
+$$ (\dirlim \shF_\alpha)(U) = \dirlim \shF_\alpha (U)$$ 
+
+On a noetherian topological space, a direct limit of flasque sheaves is flasque. The key idea is for each $\alpha$, we have that $\shF_\alpha(U) \to \shF_\alpha(V)$ is surjective. Direct limit is an exact functor, so $\dirlim \shF_\alpha(U) \to \dirlim \shF_\alpha(V)$ is also surjective. Now we show that direct limit commutes with $H^i$, i.e. 
+$$ \dirlim H^i(X, \shF_\alpha) \to H^i(X, \dirlim \shF_\alpha) $$
+
+Many proofs in this section concerns how we transport flasque resolutions. 
+We assume that $A$ is always noetherian. 
+\begin{theorem}
+\emph{(Krull's Theorem)}
+Let $M \subseteq N$ for finitely generated $A$-modules, and let $\fa$ be an ideal of $A$. Then the $\fa$-adic topology on $M$ is induced by the $\fa$-adic topology on $N$. In particular, for any $n . 0$, there exists an $n' \ge n$ such that $M \cap \fa^{n'} N $. 
+\end{theorem}
+
+Define $\Gamma_\fa(M) = \{ m \in M : \fa^n m = 0 \text{ for some }n > 0\}$. If $I$ is an injective $A$-module, then $\Gamma_\fa(I)$ is also an injective $A$-module for all ideal $\fa \subseteq A$, and $I \onto I_f$ for all $f \in A$. 
+
+\begin{proposition}
+If $I$ is injective, then $\wt{I}$ on $\Spec A$ is flasque. 
+\end{proposition}
+
+\begin{theorem}
+For all quasi-coherent $\shF$ on $X = \Spec A$ and for all $i > 0$, we have 
+$H^i(X, \shF) = 0$. 
+\end{theorem}
+\begin{proof}
+We can use the flasque resolution 
+$$ 0 \to \wt{M} \to \wt{I}^1 \to \wt{I}^2 \to \cdots $$
+Now apply $\Gamma(X, \cdot)$ functor, we get the original injective resolution back: 
+$$ 0 \to M \to I^1 \to I^2 \to \cdots$$ 
+Since the sequence is exact to start with, taking homology of this sequence gives us zero for $i > 0$. 
+\end{proof}
+
+Let $X$ be a noetherian scheme. Then any quasi-coherent sheaf $\shF$ on $X$ can be embedded in a flasque, quasi-coherent sheaf $\shG$. 
+
+\begin{theorem}
+\emph{(Serre)} If $X$ is a noetherian scheme, TFAE:
+\begin{enumerate}[(i)]
+\item $X$ is affine.
+\item $H^i(X, \shF) = 0$ for all $\shF$ quasi-coherent and all $i > 0$. 
+\item $H^1(X, \shI) = 0$ for all coherent sheaves of ideals $\shI$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+The proof is pretty enlightening. It suffices to show that (iii) $\Rightarrow$ (i). We use the criterion saying that if $X$ can be convered by affine subsets $X_{f_i}$ such that $(f_1, \cdots, f_r) = \Gamma(X, \sO_X)$, then $X$ is affine. \\\\
+\textbf{Step 1:} Let $P \in X$ be a point and $U$ be a affine neighborhood of $P$. Let $Y = X - U$. Then $Y \subseteq X$ is closed. We show that there is a $f \in \sO_X$ that does not vanish at $P$ and vanishes on $Y$. \textit{This argument has the flavor of those appearing, say, in the proof of Urysohn metrizaiton lemme. We try to find enough functions that allow us to separate a closed subset and a single point.} $X_f = U_{\bar{f}}$ is affine. We can now cover $X$ with finitely many such affine subsets $X_{f_1}, \cdots, X_{f_r}$. \\\\
+\textbf{Step 2:} Define a map $\alpha : \sO_X^r \to \sO_X$ by 
+$$ \alpha(\< a_1, \cdots, a_r \>) = \sum_{i = 1}^r f_i a_i $$ 
+$\alpha$ is surjective as a map of sheaves, since surjectivity can be checked locally and $X_{f_i}$'s cover $X$. What we want to show is that the induced map $H^0(X, \sO_X^r) \to H^0(X, \sO_X)$ is surjective. As usual we try to prove surjectivity using some exact sequence. In this case we consider the exact squence 
+$$ 0 \to \shF \to \sO_X^r \stackrel{\alpha}{\to} \sO_X \to 0 $$
+which gives the long exact sequence 
+$$ \cdots \to H^0(X, \sO_X^r) \to H^0(X, \sO_X) \to H^1(X, \shF) \to \cdots $$
+Therefore we aim to show that $H^1(X, \shF)$. We do not know much about $\shF$ right now, I guess, but we try to relate it to show sheaf of ideals, which we assume will have vanishing first cohomology. We consider the filtration 
+$$ \shF = \shF \cap \sO_X^r \supseteq \shF \cap \sO_X^{r - 1} \supseteq \cdots \supseteq \shF \cap \sO_X $$
+Each quotient is a sheaf of ideals in $\sO_X$, therefore we may climb up the filtration and deduce that $H^1(X, \shF) = 0$.  
+\end{proof}
+
+\paragraph{\Cech cohomology}
+We have seen the usage of \Cech cohomology in algebraic topology. Let $\sU = (U_i)_{i \in I}$ be an open covering of $X$ and fix an order of $I$. Let $\shF$ be a sheaf over $X$. Define 
+$$ C^p(\sU, \shF) = \prod_{i_0 < \cdots < i_p} \shF(U_{i_0, \cdots, i_p}) $$
+An element $\alpha \in C^p(\sU, \shF)$ is determined by giving an element $\alpha_{i_0, \cdots, i_p} \in \shF(U_{i_0, \cdots, i_p})$ for each $(p + 1)$-tuple, we define the differential as 
+$$ (d\alpha)_{i_0, \cdots, i_{p+1}} = \sum_{k = 0}^{p + 1} (-1)^k \alpha_{i_0, \cdots, \what{i}_k, \cdots, i_{p+1}}|_{U_{i_0, \cdots, i_{p+1}}}$$
+
+If there is a repeated index in $i_0, \cdots, i_p$, then $\alpha_{i_0, \cdots, i_p} = 0$ and if $\sigma \in S^{p+1}$ is a permutation, then $\alpha_{i_0, \cdots, i_p} = (\mathrm{sgn\,} \sigma) \alpha_{\sigma(i_0), \cdots, \sigma(i_p)}$.  
+
+Define the \Cech cohomology group with respect to the covering $\sU$ by 
+$$ \check{H}^p(\sU, \shF) = h^p(C^\cdot (\sU, \shF)) $$
+
+Keeping $X$ and $\sU$ fixed, it is not the case that a short exact sequence 
+$ 0 \to \shF' \to \shF \to \shF'' \to 0$ will give a long exact sequence of \Cech cohomology groups. That is, $\check{H}^p(\sU, \cdot)$ does not form a $\delta$-functor. For example, if $\sU = (X)$, then this results from the fact that the global section functor $\Gamma(X, \cdot)$ is not exact. 
+
+\subparagraph{Example} We compute the \Cech cohomology of $X = \IP^1_k$, $\shF = \Ohm$ the sheaf of differentials. Let $\sU = \{ U_1, U_2 \}$ be the normal cover by two affine sets.  Then 
+\begin{align*}
+C^0 &= \Gamma(U_1, \Ohm) \times \Gamma(U_2, \Ohm) = (k[x] dx) \times (k[y] dy) \\
+C^1 &= \Gamma(U_1 \cap U_2, \Ohm) = k[x, \frac{1}{x}] dx 
+\end{align*} 
+The map $d : C^0 \to C^1$ is given by 
+$$ x \mapsto x, \, \, y \mapsto \frac{1}{y}, \, \, dy \mapsto - \frac{1}{x^2} dx $$
+Therefore 
+$$ \ker d = \{ (f(x) dx, g(y) dy) : f(x) = - \frac{1}{x^2} g(\frac{1}{x}) \}$$
+The condition holds only when $f = g = 0$ since $f, g$ are both polynomials, so $H^0(X, \sU) = 0$. 
+$$ H^1(X, \sU) = C^1/ \im d = k[x, \frac{1}{x}] dx/ \< (f(x) + \frac{1}{x^2} g(\frac{1}{x})dx \> = k[\frac{1}{x}]/(\frac{1}{x^2}) = k $$
+
+Note that we can easily verify using sheaf axioms that $\cH^0(\sU, \shF) = \Gamma(X, \shF)$. 
+
+Now we define a ``sheafified" version of the \Cech complex: 
+$$ \shC^p(\sU, \shF)  =  \prod_{i_0 < \cdots < i_p} f_* (\shF|_{U_{i_0, \cdots, i_p}})$$
+where $f : V \to X$ denotes the inclusion map. Note that each $\shC^p$ is now a sheaf and $\Gamma(\sU, \shC^p(\sU, \shF)) = C^p(\sU, \shF)$. These sheaves provide a resolution of $\shF$. That is, there is a natural map $\sm : \shF \to \shC^0(\sU, \shF)$ (which is nothing but restriction to each set in the open cover) such that the sequence of sheaves 
+$$ 0 \to \shF \stackrel{\sm}{\to} \shC^0(\sU,\shF) \to \shC^1(\sU,\shF) \to \cdots $$
+is exact. Again the exactness at $\sm$ follows directly from the sheaf axioms. Exactness at other arrows is shown as follows: First we pass to the stalk at an arbitrary point $x$, and then we give a homotopy operator $k : \shC^p(\sU, \shF)_x \to \shC^{p - 1}(\sU, \shF)_x$ such that $kd + dk = \id$, i.e. the identity map is homotopic to the zero map. Therefore the cohomology groups $h^p(\shC_x^\cdot)$ of this complex are zero for $p \ge 1$. \textit{Same deal as in algebraic topology.}
+
+Our goal is to show that the \Cech cohomology coincides with derived functor cohomology, so we begin the simplest ones, i.e. the flasque sheaves. If $\shF$ is a flasque sheaf of abelian groups on $X$, then for all $p > 0$, we have $\cH^p(\sU, \shF) = 0$. The key is that if $\shF$ is flasque, then each $\shC^p$ is flasque, so we can simply use the resolution of $\shC^\cdot$ to compute the cohomology groups, which gives us zero when $p \ge 1$. Each $\shC^p$ is flasque since restriction, push-forward by $f_*$ and direct sum all preserve the ``flasqueness". 
+
+Now we venture into the general case, i.e. for each $p \ge 0$, there is a natural map, functorial in $\shF$, 
+$$ \cH^p (\sU, \shF) \to H^p(X, \shF)$$
+Let $0 \to \shF \to \shI^\cdot$ be an injective resolution of $\shF$ in $\Ab(X)$. We now have a commutative diagram 
+
+\begin{center}
+\begin{tikzcd}
+0  \arrow{r}{} & \shF \arrow{d}{\id} \arrow{r} & \shC^0  \arrow{r} & \shC^1 \arrow{r} & \shC^2  \arrow{r} & \cdots \\
+0 \arrow{r}{}  & \shF \arrow{r}{} & \shI^0 \arrow{r}{} & \shI^1 \arrow{r} & \shI^3  \arrow{r} & \cdots 
+\end{tikzcd}
+\end{center}
+It follows from a general result on complexes that the identity map at $\shF$ extends to morphisms $\shC^p \to \shI^p$ for each $p$ such that the above diagram commutes. Now apply the functor $\Gamma$, and then $h^p$ to the diagram to obtain the desired map. 
+
+Now show that when $X$ is a noetherian separated scheme, $\sU$ an open affine cover and $\shF$ is a quasi-coherent sheaf on $X$, then for all $p \ge 0$, the natural maps obtained are isomorphisms. 
+
+We embed $\shF$ into a flasque, quasi-coherent sheaf $\shG$ and let $\shR$ be the quotient: 
+$$ 0 \to \shF \to \shG \to \shR \to 0 $$
+Recall that if $X$ is separated, then the intersection of any two affine open subsets is affine. Since $\Gamma$ is exact for affine schemes, we have that 
+$$ 0 \to \shF(U_{i_0, \cdots, i_p}) \to \shG(U_{i_0, \cdots, i_p}) \to \shR(U_{i_0, \cdots, i_p}) \to 0 $$
+is exact. Taking products, the sequence
+$$ 0 \to C^\cdot (\sU, \shF) \to C^\cdot (\sU, \shG) \to C^\cdot (\sU, \shR) \to 0 $$
+is exact. Since $\shG$ is flasque, $\cH^p(\sU, \shG) = 0$ for all $p \ge 1$. Therefore in the long exact sequence of cohomology, $\cH^p(\sU, \shR) \to \cH^{p + 1}(\sU, \shF)$ is an isomorphism for each $p \ge 1$. 
+
+\begin{center}
+\begin{tikzcd}
+0  \arrow{r}{} & \cH^0(\sU, \shF) \arrow{d}{\id} \arrow{r} & \cH^0(\sU, \shG) \arrow{r} \arrow{d}{\id} & \cH^0(\sU, \shR) \arrow{r} \arrow{d}{\id} & \cH^1(\sU, \shF) \arrow{r}  \arrow{d}{} & 0 \\
+0 \arrow{r}{}  & H^0(X, \shF) \arrow{r}{} & H^0(X, \shG) \arrow{r}{} & H^0(X, \shR) \arrow{r} & H^1(X, \shF)  \arrow{r} & 0
+\end{tikzcd}
+\end{center}
+
+Five lemma says that $\cH^1(\sU, \shF) \to H^1(X, \shF)$ is also an isomorphism. Finally note that $\shR$ is also quasi-coherent, so we obtain the result by induction. 
+
+
+\paragraph{Cohomology of projective space}
+We compute explicitly the cohomology of sheaves $\sO(n)$ on a projective space, by using \Cech cohomology. Let $A$ be a noetherian ring, $S = A[x_0, \cdots, x_r]$ and let $X = \Proj S$ be the projective space $\IP_A^r$ over $A$. 
+
+Recall that the natural map $S \to \Gamma_*(\sO_X) = \oplus_{n \in \IZ} H^0(X, \sO_X(n))$ is an isomorphism. 
+
+\begin{theorem}
+\begin{enumerate}[a.]
+\item $H^i(X, \sO_X(n)) = 0$ for $0 < i < r$ and all $n \in \IZ$. 
+\item $H^r(X, \sO_X(-r - 1)) \iso A$. 
+\item The natural map $H^0(X, \sO_X(n)) \times H^r(X, \sO_X(-n - r - 1)) \to H^r(X, \sO_X(-r - 1)) \iso A$ is a perfect pairing of finitely generated free $A$-modules, for each $n \in \IZ$. 
+\end{enumerate}
+\end{theorem}
+
+
+
+\end{document}
