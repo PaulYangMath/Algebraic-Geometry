@@ -1,0 +1,267 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{mathrsfs} 
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{latexsym} 
+%\usepackage{epsfig}
+%\usepackage{graphicx}
+%\usepackage[dvips]{graphicx}
+
+
+
+
+\usepackage[matrix,tips,graph,curve]{xy}
+
+\newcommand{\mnote}[1]{${}^*$\marginpar{\footnotesize ${}^*$#1}}
+\linespread{1.065}
+
+\makeatletter
+
+\setlength\@tempdima  {5.5in}
+\addtolength\@tempdima {-\textwidth}
+\addtolength\hoffset{-0.5\@tempdima}
+\setlength{\textwidth}{5.5in}
+\setlength{\textheight}{8.75in}
+\addtolength\voffset{-0.625in}
+
+\makeatother
+
+\makeatletter 
+\@addtoreset{equation}{section}
+\makeatother
+
+
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}[equation]{Theorem}
+\newtheorem{corollary}[equation]{Corollary}
+\newtheorem{conjecture}[equation]{Conjecture}
+\newtheorem{lemma}[equation]{Lemma}
+\newtheorem{proposition}[equation]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[equation]{Definition}
+\newtheorem{definitions}[equation]{Definitions}
+%\theoremstyle{remark}
+
+\newtheorem{remark}[equation]{Remark}
+\newtheorem{remarks}[equation]{Remarks}
+\newtheorem{exercise}[equation]{Exercise}
+\newtheorem{example}[equation]{Example}
+\newtheorem{examples}[equation]{Examples}
+\newtheorem{notation}[equation]{Notation}
+\newtheorem{question}[equation]{Question}
+\newtheorem{assumption}[equation]{Assumption}
+\newtheorem*{claim}{Claim}
+\newtheorem{answer}[equation]{Answer}
+
+\newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{.}{.5em}{\thmnote{#3's }#1}
+\theoremstyle{named}
+\newtheorem*{namedtheorem}{Theorem}
+%%%%%% letters %%%%
+
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fb}{\mathfrak{b}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fn}{\mathfrak{n}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fq}{\mathfrak{q}}
+
+\newcommand{\IA}{\mathbb{A}}
+\newcommand{\IN}{\mathbb{N}}
+\newcommand{\IF}{\mathbb{F}}
+\newcommand{\IP}{\mathbb{P}}
+\newcommand{\IZ}{\mathbb{Z}}
+
+\newcommand{\sD}{\mathcal{D}}
+\newcommand{\sI}{\mathcal{I}}
+\newcommand{\sO}{\mathcal{O}}
+\newcommand{\sP}{\mathcal{P}}
+\newcommand{\sQ}{\mathcal{Q}}
+\newcommand{\sT}{\mathcal{T}}
+\newcommand{\sU}{\mathcal{U}}
+
+\newcommand{\shF}{\mathscr{F}}
+\newcommand{\shG}{\mathscr{G}}
+%%%%%%% macros %%%%%
+
+%% my definitions %%%
+
+\newcommand{\End}{\mathrm{End}}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\Trace}{\mathrm{Trace}\,}
+\newcommand{\rank}{\mathrm{rank}}
+\renewcommand{\deg}{\mathrm{deg}\,}
+\newcommand{\Spec}{\rm Spec\,}
+\newcommand{\Proj}{\rm Proj\,}
+\newcommand{\Sym}{\mathrm{Sym \,}}
+\newcommand{\Span}{\mathrm{Span \,}}
+\renewcommand\dim{{\rm dim\,}}
+\newcommand{\codim}{{\rm codim\,}}
+\renewcommand\det{{\rm det\,}}
+\newcommand{\im}{{\rm Im\,}}
+
+
+\newcommand\iso{{\, \simeq \,}} 
+\newcommand\tensor{{\otimes}}
+\newcommand\Tensor{{\bigotimes}} 
+\newcommand\union{\bigcup} 
+\newcommand\onehalf{\frac{1}{2}}
+\newcommand\trivial{{\mathbb I}}
+\newcommand\wb{\overline}
+
+%%%%%Delimiters%%%%
+
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+
+%\renewcommand{\(}{\left(}
+%\renewcommand{\)}{\right)}
+
+
+%%%% Different kind of derivatives %%%%%
+
+\newcommand{\delbar}{\bar{\partial}}
+\newcommand{\pdu}{\frac{\partial}{\partial u}}
+%\newcommand{\pd}[1][2]{\frac{\partial #1}{\partial #2}}
+
+%%%%% Arrows %%%%%
+\newcommand{\induce}{\rightsquigarrow}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\onto}{\twoheadrightarrow}
+\newcommand{\tto}{\longmapsto}
+\def\llra{\longleftrightarrow}
+\def\wt{\widetilde}
+\def\wtilde{\widetilde}
+\def\what{\widehat}
+\def\bf{\textbf}
+\def\it{\textit}
+%%%%%%%%%%%%%%%%%%% Ziquan's definitions %%%%%%%%%%%%%%%%%%%%
+\newcommand{\Ann}{\mathrm{Ann}}
+\newcommand{\height}{\mathrm{height \,}}
+\newcommand{\Div}{\mathrm{Div}}
+\newcommand{\sE}{\mathcal{E}}
+\newcommand{\p}{\partial}
+\newcommand{\Ohm}{\Omega}
+\newcommand{\w}{\omega}
+\newcommand{\sing}{\mathrm{sing}}
+%%%%%%%%%%%%% new definitions for the positive mass paper %%%%%%%%%
+
+\newcommand{\sperp}{{\scriptscriptstyle \perp}}
+\newcommand{\Qmed}{\mathcal{Q}_r^\mathrm{medium}}
+\newcommand{\Qhigh}{\mathcal{Q}^\mathrm{high}}
+\newcommand{\uppermu}{\overline{\mu}}
+\newcommand{\lowermu}{\underline{\mu}}
+\newcommand{\res}{\mathrm{res}}
+\newcommand{\ev}{\mathrm{ev}}
+\newcommand{\pr}{\mathrm{pr}}
+\newcommand{\Prob}{\mathrm{Prob}}
+\newcommand{\st}{\, \mathrm{ s.t. }\,}
+\newcommand{\ew}{\textit{a.e.}\,}
+\newcommand{\sm}{\varepsilon}
+\newcommand{\uD}{\overline{D}}
+\newcommand{\lD}{\underline{D}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\sreals}{\overline{\mathbb{R}}}
+\newcommand{\IQ}{\mathbb{Q}}
+\newcommand{\IC}{\mathbb{C}}
+\newcommand{\Diff}{\mathrm{Diff}}
+\newcommand{\Av}{\mathrm{Av}}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%
+\begin{document}
+%
+
+\title{Some Notes on Curves}
+\author{Ziquan Yang}
+
+
+\date{\today}
+
+\maketitle
+
+
+%\setcounter{secnumdepth}{1} 
+
+\setcounter{section}{0}
+\section{Nonsingular curves}
+\paragraph{A brief review of algebraic facts}
+Some important algebraic structures related to the theory of nonsigular curves are valuation rings, DVRs and Dedekind domains. 
+\begin{enumerate}
+\item Recall how we found valuation rings in a field, as introduced in [AM]. If $A, B \subseteq K$ are local rings, then $B$ is said to \textit{dominate} $A$ if $A \subseteq B$ and $\fm_A = \fm_B \cap A$. Valuation rings are maximal elements in the collection of local rings in $K$ partially ordered by domination.  
+
+\item Towords the end of [AM], we showed that if $A$ is a noetherian local domain of dimension $1$, with maximal ideal $\fm$, then $A$ is a DVR, iff it is integrally closed, iff it is a regular local ring, iff $\fm$ is a principal ideal. 
+
+\item A Dedekind domain is an integrally closed noetherian domain of dimension $1$. Every localization of a Dedekind domain at a nonzero prime ideal is a DVR, since integral closure is a local property. In particular, we see that the affine coordinate ring of an affine nonsingular curve is a Dedekind domain. 
+
+\item Let $R$ be Dedekind domain and $K$ be its quotient field. If $L$ is a finite extension of $K$, then the integral closure of $R$ in $L$ is still a Dedekind domain. 
+\end{enumerate}
+
+\paragraph{The basic idea} Let $K$ be the function field of $C$. If $P$ is a point on a nonsingular curve $C$, then the local ring $\sO_P$ is a regular local ring, i.e. a DVR. Each $\sO_P$ is a naturally a subring of $K$. Therefore points on a curve given DVRs in the function field of the curve. Let $C_K$ denote the collection of DVRs contained in $K$. The correspondence $P$ with $\sO_P$ is the main subject of study.  It is not hard to show that on a projective variety, the correspondence $P \mapsto \sO_P$ is one-to-one. Each pair of (closed) points $P, Q$ on a projecitve variety is contained in some affine subset, say $\Spec A$. Therefore we can write $\sO_P = A_\fm, \sO_Q = A_\fn$. If $\sO_P \subseteq \sO_Q$, then $\fn \subseteq \fm$. 
+
+\paragraph{Rational functions} Hartshorne proved the following lemma: 
+\begin{lemma} 
+\label{main}
+Let $K$ be a function field of dimension $1$ over $k$, and let $x \in K$. Then $\{ R \in C_K : x \not\in R \}$ is a finite set.  
+\end{lemma}
+Before delving into the proof let us first think what it means. Of course, $x \in K$ should be think of as a rational function. The discrete valuaion of $R \in C_K$ measures the order of zero at $x$ at the point corresponding to $R$. (Well, we have not shown that there is a such a point, but let us pretend it for now.) $x \not\in R$ if and only if $x$ is not regular at the point, i.e. it has a pole at the point. Therefore, roughly speaking, we want to show that rational functions on a nonsingular curve have poles at only finitely many points.  
+
+Hartshorne treats it in a very algebraic fashion and the proof resembles those proofs in [AM]. Consider Riemann surfaces, if $x$ a meromorphic function has a pole at the point, then its inverse has a zero at the same point. Indeed, recall how we defined valuations in a field $K$: it is a subring such that for each element, one of the element itself or its inverse has to lie in the subring. Therefore in our case, let $y = 1/x$, and we see that $y \in R$ if $x \not\in R$. In fact, $y \in \fm_R$ since otherwise it will be a unit. We want to show there are only finitely many such $R$'s. 
+
+If $y$ is a constant, then there is nothing to study. In fact, it would also be impossible that $x$ is not regular at some point. Therefore $y$ is transcendental over $k$. Since $K$ has transcendence degree $1$, $[K : k(y)]$ becomes a finite extension. Let $B$ be the integral closure of $k[y]$ in $K$. By the algebraic fact we recalled previously, $B$ is also a Dedekind domain. (What does the action of taking integral closure correspond to geometrically? I kind of suspect that $B$ corresponds to that part one which $y$ is regular)
+
+Since $R$ is integrally closed and contains $k[y]$, $B \subseteq R$. Let $\fn = \fm_R \cap B$, then $\fn$ must be a maximal ideal of $B$, since $\dim B = 1$ and $y \in \fm_R \cap \fn$. $B$ is hence dominated by $R$, and $B_\fn = R$, since both must be maximal. $B$ is the affine coordinate ring of some affine variety $Y$. (This further confirms my suspection. $Y$ should be considered as a part of the curve $C$?) $y$ is a regular function on $Y$, and we have a bijective correspondence between $R$'s containing $y$ and maximal ideals $\fn$ containing $y$, but there are only finitely many of them. Indeed, $Y$ is curve, and Zariski closed subsets are finite collection of points. 
+
+In the end, I think the proof is just trying to say that $y$ \textit{vanishes} at finitely many points on $C$. What is the point of doing this so abstractly?
+
+\paragraph{Abstract nonsingular curve}  I think it the basic idea of constructing curves out of a function field $K$ of dimension $1$ is the same as that of constructing schemes, i.e. savaging a geometric structure out of a ring. As suggested before, we want to think of $C_K$ as the collection of points on the curve. the Zariski topology of a curve is easy to understood. Therefore we can topologize the collection $C_K$ simply by defining open subsets as the complements of finitely many points. Now we need a sheaf of regular functions on $C_K$. The natural choice is of course $\sO(U) = \cap_{P \in U} R_P$, where $R_P \in C_K$ stands for the DVR corresponding to $P$. An abstract nonsingular curve is an open subset $U \subseteq C_K$, with the induced topology. Abstract nonsingular curves seem to enlarge our category of curves. As geometric structures, two curves are the same if they have the same topology and the same regular functions, just as what we require for schemes. 
+
+\paragraph{How many points do we miss?}
+So we have seen that the points on a nonsingular curve give DVRs in the function field. The lemma we proved before helps ensure that almost all DVRs in the function field arise this way, so that it is not the case that the function field has tons of mysterious DVRs that we do not know where they come from. 
+
+\begin{theorem}
+Every nonsingular quasi-projective curve $Y$ is isomorphic to some abstract nonsingular curve. 
+\end{theorem}
+\begin{proof}
+Let $K$ be the function field of $Y$. $K$ gives us an abstract nonsingular curve. All that we really need is that $Y$ maps to an open subset of $C_K$. Once this is done, it is automatic that $Y$ and its image have the same regular functions. 
+
+A subset is open in $C_K$ if and only if its complement is finite. Therefore in this special case, a subset is open if and only if it contains an open subset. Therefore we reduce to the case where $Y$ is affine. Suppose $Y \subseteq \IA^n$ with affine coordinate ring $A$. 
+
+$A$ itself is already a Dedekind domain. There is no need to take its integral closure in $K$ again as in the proof of Lemma~\ref{main}. If $R$ contains $A$, then we want that the abstract point corresponding to $R$ lies somewhere on the curve. Indeed, if $A \subseteq R$, then $A$ localized at the pull back of the maximal ideal of $R$ is $R$ again. Therefore we find the corresponding point on the curve. Therefore the image of $Y$ in $C_K$ are exactly those DVRs that contain $A$. 
+
+Suppose $A$ is generated by $x_1, \cdots, x_n$. Then $A \subseteq R$ if and only if each $x_i \in R$. However, by Lemma~\ref{main}, there are only finitely many DVRs not containing some of $x_i$'s. 
+\end{proof}
+
+\paragraph{Extension theorem}
+Now we begin to study the properties of morphisms from curves. This theorem says that if the target is a projective variety, then we can always extend a morphism uniquely when it misses some point. I guess that that the target is projective is important. Intuitively, a rational function fails to the regular at a point only if its denominator vanishes at the point. However, if the target is projective, then we can ``clear the denominators". For example, the map $\IC \to \IC$ given by $z \mapsto 1/z$ fails to be regular at the origin, but if we compactify $\IC$ to $\IP^1$, then we extend the map by setting $1/0 = \infty$. Let us have a closer look at how this is done. The map $\IC \to \IP^1$ is at first given by $z \mapsto [1/z : 1]$. We clear the denominator using $z$, so that the morphism extends to $z \mapsto [1 : z]$. 
+
+\begin{theorem}
+Let $X$ be an abstract nonsingular curve, $P \in X$ be a point, $Y$ be a projective variety and $\varphi : X - P \to Y$ be a morphism. Then there exists a unique $\wt{\varphi} : X \to Y$ extending $\varphi$. 
+\end{theorem}
+\begin{proof}
+If $\varphi$ extends to $\wt{\varphi}$, then since $\wt{\varphi}^{-1}(Y)$ is closed in $X$, it must be all of $X$. Therefore it does not hurt if we replace $Y$ by $\IP^n$ containing $Y$. We reduce to the case $Y = \IP^n$. 
+
+Let $U_i = \{ x_i \neq 0\} \subset \IP^n$ and $U = \cap_i U_i$. We assume $U \cap \varphi( X - P) \neq \emptyset$. Otherwise, irreducibility of $\varphi(X - P)$ will force that $X - P \subseteq \IP^n - U_i = \IP^{n - 1}$ for some $i$ and we reduce to the case $Y = \IP^{n - 1}$.  
+
+Now what we do is nothing more sophisticated than replacing $[1/z : 1]$ by $[z : 1]$. Each $x_i/x_j$ is a regular function on $U$ and let $f_{ij}$ to be its pullback. Each $f_{ij}$ is a rational function on $X$. The discrete valuation $v$ of $P$ measures the order the vanishing (or the negative order of poles) of rational functions. Some $x_k$ has the highest order of poles relative to the other coordinates. Therefore for such $k$, we have that $v(f_{ik}) \ge 0$ for each $i$. Then we define $\wt{\varphi} = (f_{0k}, \cdots, f_{nk})$. Note that $f_{kk} = 1$ so $\wt{\varphi}$ maps anything to $U_k$. $\wt{\varphi}$ is regular at $P$ simply because $v(f_{ik}) \ge 0$ for each $i$. Uniqueness is immediate. 
+\end{proof}
+
+\paragraph{Recover the curve}
+
+
+
+
+
+
+
+\end{document}

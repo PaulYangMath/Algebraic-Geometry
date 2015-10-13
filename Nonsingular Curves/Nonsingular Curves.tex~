@@ -1,0 +1,218 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{mathrsfs} 
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{latexsym} 
+%\usepackage{epsfig}
+%\usepackage{graphicx}
+%\usepackage[dvips]{graphicx}
+
+
+
+
+\usepackage[matrix,tips,graph,curve]{xy}
+
+\newcommand{\mnote}[1]{${}^*$\marginpar{\footnotesize ${}^*$#1}}
+\linespread{1.065}
+
+\makeatletter
+
+\setlength\@tempdima  {5.5in}
+\addtolength\@tempdima {-\textwidth}
+\addtolength\hoffset{-0.5\@tempdima}
+\setlength{\textwidth}{5.5in}
+\setlength{\textheight}{8.75in}
+\addtolength\voffset{-0.625in}
+
+\makeatother
+
+\makeatletter 
+\@addtoreset{equation}{section}
+\makeatother
+
+
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}[equation]{Theorem}
+\newtheorem{corollary}[equation]{Corollary}
+\newtheorem{conjecture}[equation]{Conjecture}
+\newtheorem{lemma}[equation]{Lemma}
+\newtheorem{proposition}[equation]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[equation]{Definition}
+\newtheorem{definitions}[equation]{Definitions}
+%\theoremstyle{remark}
+
+\newtheorem{remark}[equation]{Remark}
+\newtheorem{remarks}[equation]{Remarks}
+\newtheorem{exercise}[equation]{Exercise}
+\newtheorem{example}[equation]{Example}
+\newtheorem{examples}[equation]{Examples}
+\newtheorem{notation}[equation]{Notation}
+\newtheorem{question}[equation]{Question}
+\newtheorem{assumption}[equation]{Assumption}
+\newtheorem*{claim}{Claim}
+\newtheorem{answer}[equation]{Answer}
+
+\newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{.}{.5em}{\thmnote{#3's }#1}
+\theoremstyle{named}
+\newtheorem*{namedtheorem}{Theorem}
+%%%%%% letters %%%%
+
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fb}{\mathfrak{b}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fq}{\mathfrak{q}}
+
+\newcommand{\IA}{\mathbb{A}}
+\newcommand{\IN}{\mathbb{N}}
+\newcommand{\IF}{\mathbb{F}}
+\newcommand{\IP}{\mathbb{P}}
+\newcommand{\IZ}{\mathbb{Z}}
+
+\newcommand{\sD}{\mathcal{D}}
+\newcommand{\sI}{\mathcal{I}}
+\newcommand{\sO}{\mathcal{O}}
+\newcommand{\sP}{\mathcal{P}}
+\newcommand{\sQ}{\mathcal{Q}}
+\newcommand{\sT}{\mathcal{T}}
+\newcommand{\sU}{\mathcal{U}}
+
+\newcommand{\shF}{\mathscr{F}}
+\newcommand{\shG}{\mathscr{G}}
+%%%%%%% macros %%%%%
+
+%% my definitions %%%
+
+\newcommand{\End}{\mathrm{End}}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\Trace}{\mathrm{Trace}\,}
+\newcommand{\rank}{\mathrm{rank}}
+\renewcommand{\deg}{\mathrm{deg}\,}
+\newcommand{\Spec}{\rm Spec\,}
+\newcommand{\Proj}{\rm Proj\,}
+\newcommand{\Sym}{\mathrm{Sym \,}}
+\newcommand{\Span}{\mathrm{Span \,}}
+\renewcommand\dim{{\rm dim\,}}
+\newcommand{\codim}{{\rm codim\,}}
+\renewcommand\det{{\rm det\,}}
+\newcommand{\im}{{\rm Im\,}}
+
+
+\newcommand\iso{{\, \simeq \,}} 
+\newcommand\tensor{{\otimes}}
+\newcommand\Tensor{{\bigotimes}} 
+\newcommand\union{\bigcup} 
+\newcommand\onehalf{\frac{1}{2}}
+\newcommand\trivial{{\mathbb I}}
+\newcommand\wb{\overline}
+
+%%%%%Delimiters%%%%
+
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+
+%\renewcommand{\(}{\left(}
+%\renewcommand{\)}{\right)}
+
+
+%%%% Different kind of derivatives %%%%%
+
+\newcommand{\delbar}{\bar{\partial}}
+\newcommand{\pdu}{\frac{\partial}{\partial u}}
+%\newcommand{\pd}[1][2]{\frac{\partial #1}{\partial #2}}
+
+%%%%% Arrows %%%%%
+\newcommand{\induce}{\rightsquigarrow}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\onto}{\twoheadrightarrow}
+\newcommand{\tto}{\longmapsto}
+\def\llra{\longleftrightarrow}
+\def\wt{\widetilde}
+\def\wtilde{\widetilde}
+\def\what{\widehat}
+\def\bf{\textbf}
+\def\it{\textit}
+%%%%%%%%%%%%%%%%%%% Ziquan's definitions %%%%%%%%%%%%%%%%%%%%
+\newcommand{\Ann}{\mathrm{Ann}}
+\newcommand{\height}{\mathrm{height \,}}
+\newcommand{\Div}{\mathrm{Div}}
+\newcommand{\sE}{\mathcal{E}}
+\newcommand{\p}{\partial}
+\newcommand{\Ohm}{\Omega}
+\newcommand{\w}{\omega}
+\newcommand{\sing}{\mathrm{sing}}
+%%%%%%%%%%%%% new definitions for the positive mass paper %%%%%%%%%
+
+\newcommand{\sperp}{{\scriptscriptstyle \perp}}
+\newcommand{\Qmed}{\mathcal{Q}_r^\mathrm{medium}}
+\newcommand{\Qhigh}{\mathcal{Q}^\mathrm{high}}
+\newcommand{\uppermu}{\overline{\mu}}
+\newcommand{\lowermu}{\underline{\mu}}
+\newcommand{\res}{\mathrm{res}}
+\newcommand{\ev}{\mathrm{ev}}
+\newcommand{\pr}{\mathrm{pr}}
+\newcommand{\Prob}{\mathrm{Prob}}
+\newcommand{\st}{\, \mathrm{ s.t. }\,}
+\newcommand{\ew}{\textit{a.e.}\,}
+\newcommand{\sm}{\varepsilon}
+\newcommand{\uD}{\overline{D}}
+\newcommand{\lD}{\underline{D}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\sreals}{\overline{\mathbb{R}}}
+\newcommand{\IQ}{\mathbb{Q}}
+\newcommand{\IC}{\mathbb{C}}
+\newcommand{\Diff}{\mathrm{Diff}}
+\newcommand{\Av}{\mathrm{Av}}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%
+\begin{document}
+%
+
+\title{A Review of Nonsingular Curves}
+\author{Ziquan Yang}
+
+
+\date{\today}
+
+\maketitle
+
+
+%\setcounter{secnumdepth}{1} 
+
+\setcounter{section}{0}
+\paragraph{A brief review of algebraic facts}
+Some important algebraic structures related to the theory of nonsigular curves are valuation rings, DVRs and Dedekind domains. 
+\begin{enumerate}
+\item Recall how we found valuation rings in a field, as introduced in [AM]. If $A, B \subseteq K$ are local rings, then $B$ is said to \textit{dominate} $A$ if $A \subseteq B$ and $\fm_A = \fm_B \cap A$. Valuation rings are maximal elements in the collection of local rings in $K$ partially ordered by domination.  
+
+\item Towords the end of [AM], we showed that if $A$ is a noetherian local domain of dimension $1$, with maximal ideal $\fm$, then $A$ is a DVR, iff it is integrally closed, iff it is a regular local ring, iff $\fm$ is a principal ideal. 
+
+\item A Dedekind domain is an integrally closed noetherian domain of dimension $1$. Every localization of a Dedekind domain at a nonzero prime ideal is a DVR, since integral closure is a local property. 
+
+\item Let $R$ be Dedekind domain and $K$ be its quotient field. If $L$ is a finite extension of $K$, then the integral closure of $R$ in $L$ is still a Dedekind domain. 
+\end{enumerate}
+
+\paragraph{The basic idea} Let $K$ be the function field of $C$. If $P$ is a point on a nonsingular curve $C$, then the local ring $\sO_P$ is a regular local ring, i.e. a DVR. Each $\sO_P$ is a naturally a subring of $K$. Therefore points on a curve given DVRs in the function field of the curve. Let $C_K$ denote the collection of DVRs contained in $K$. The correspondence $P$ with $\sO_P$ is the main subject of study.  It is not hard to show that on a projective variety, the correspondence $P \mapsto \sO_P$ is one-to-one. Each pair of (closed) points $P, Q$ on a projecitve variety is contained in some affine subset, say $\Spec A$. Therefore we can write $\sO_P = A_\fm, \sO_Q = A_\fn$. If $\sO_P \subseteq \sO_Q$, then $\fn \subseteq \fm$. 
+
+\paragraph{Rational functions} Hartshorne proved the following lemma: 
+\begin{lemma} 
+Let $K$ be a function field of dimension $1$ over $k$, and let $x \in K$. Then $\{ R \in C_K : x \not\in R \}$ is a finite set.  
+\end{lemma}
+Before delving into the proof let us first think what it means. Of course, $x \in K$ should be think of as a rational function. The discrete valuaion of $R \in C_K$ measures the order of zero at $x$ at the point corresponding to $R$. (Well, we have not shown that there is a such a point, but let us pretend it for now.) $x \not\in R$ if and only if $x$ is not regular at the point, i.e. it has a pole at the point. Therefore, roughly speaking, we want to show that rational functions on a nonsingular curve have poles at only finitely many points.  
+
+
+
+\end{document}
