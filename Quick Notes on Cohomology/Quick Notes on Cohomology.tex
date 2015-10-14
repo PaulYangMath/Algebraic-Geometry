@@ -264,7 +264,7 @@ Since the sequence is exact to start with, taking homology of this sequence give
 Let $X$ be a noetherian scheme. Then any quasi-coherent sheaf $\shF$ on $X$ can be embedded in a flasque, quasi-coherent sheaf $\shG$. 
 
 \begin{theorem}
-\emph{(Serre)} If $X$ is a noetherian scheme, TFAE:
+\emph{(Serre's cohomological criterion for affineness)} If $X$ is a noetherian scheme, TFAE:
 \begin{enumerate}[(i)]
 \item $X$ is affine.
 \item $H^i(X, \shF) = 0$ for all $\shF$ quasi-coherent and all $i > 0$. 
@@ -284,6 +284,10 @@ Therefore we aim to show that $H^1(X, \shF)$. We do not know much about $\shF$ r
 $$ \shF = \shF \cap \sO_X^r \supseteq \shF \cap \sO_X^{r - 1} \supseteq \cdots \supseteq \shF \cap \sO_X $$
 Each quotient is a sheaf of ideals in $\sO_X$, therefore we may climb up the filtration and deduce that $H^1(X, \shF) = 0$.  
 \end{proof}
+
+It is of general interest to understand how cohomology behaves under morphisms. If $\pi : X \to Y$ is any morphism of quasiprojective separated A-schemes, and $\shF$ is a quasi-coherent sheaf on $X$, then there is a natural morphism $H^i(Y, \pi_* \shF ) \to H^i(X, \shF)$ extending $\Gamma(Y, \pi^* \shF) \to \Gamma(X, \shF)$. This natural morphism is again given by a homological fact about complexes. If $X$ is an affine morphism, than this natural map is an isomorphism. If $\pi$ is the embedding of $X \subseteq Y = \IP^N_A$, this isomorphism translates calculations on arbitrary projective scheme to calculations on the projective space. 
+
+
 
 \paragraph{\Cech cohomology}
 We have seen the usage of \Cech cohomology in algebraic topology. Let $\sU = (U_i)_{i \in I}$ be an open covering of $X$ and fix an order of $I$. Let $\shF$ be a sheaf over $X$. Define 
@@ -365,6 +369,7 @@ Recall that the natural map $S \to \Gamma_*(\sO_X) = \oplus_{n \in \IZ} H^0(X, \
 \item The natural map $H^0(X, \sO_X(n)) \times H^r(X, \sO_X(-n - r - 1)) \to H^r(X, \sO_X(-r - 1)) \iso A$ is a perfect pairing of finitely generated free $A$-modules, for each $n \in \IZ$. 
 \end{enumerate}
 \end{theorem}
+
 
 
 
