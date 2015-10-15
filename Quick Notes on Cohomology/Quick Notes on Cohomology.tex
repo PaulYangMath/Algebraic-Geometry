@@ -85,6 +85,7 @@
 \newcommand{\shF}{\mathscr{F}}
 \newcommand{\shG}{\mathscr{G}}
 \newcommand{\shI}{\mathscr{I}}
+\newcommand{\shL}{\mathscr{L}}
 \newcommand{\shK}{\mathscr{K}}
 \newcommand{\shR}{\mathscr{R}}
 %%%%%%% macros %%%%%
@@ -98,13 +99,14 @@
 \newcommand{\Trace}{\mathrm{Trace}\,}
 \newcommand{\rank}{\mathrm{rank}}
 \newcommand{\corank}{\mathrm{corank}}
-\renewcommand{\deg}{\mathrm{deg}}
+\renewcommand{\deg}{\mathrm{deg\,}}
 \newcommand{\Spec}{\rm Spec\,}
 \newcommand{\Proj}{\rm Proj \,}
 \newcommand{\Sym}{\mathrm{Sym \,}}
 \newcommand{\Span}{\mathrm{Span \,}}
 \renewcommand\dim{{\rm dim\,}}
 \renewcommand\det{{\rm det\,}}
+\newcommand{\coker}{\mathrm{coker\,}}
 
 \newcommand{\id}{\rm id}
 \newcommand\iso{{\, \cong \,}} 
@@ -193,7 +195,8 @@
 %\setcounter{secnumdepth}{1} 
 
 \setcounter{section}{0}
-\paragraph{Categorical nonsense}
+\section{Derived functor cohomology}
+\subsection{Categorical nonsense}
 Let $\sU$ be a category. An object $I$ is called injective if $\Hom(\cdot, I)$ is exact. (Recall that in the general case it is always left-exact.) If every object is isomorphic to a subobject of an injective, then the category is said to have enough injectives. 
 
 An injective resolution of of an object $A$ is a complex $I^\cdot$, defined in degrees $i \ge 0$ , together with a morphism $\sm : A \to I^0$ such that each $I^i$ is injective and the sequence 
@@ -289,7 +292,7 @@ It is of general interest to understand how cohomology behaves under morphisms. 
 
 
 
-\paragraph{\Cech cohomology}
+\section{\Cech cohomology}
 We have seen the usage of \Cech cohomology in algebraic topology. Let $\sU = (U_i)_{i \in I}$ be an open covering of $X$ and fix an order of $I$. Let $\shF$ be a sheaf over $X$. Define 
 $$ C^p(\sU, \shF) = \prod_{i_0 < \cdots < i_p} \shF(U_{i_0, \cdots, i_p}) $$
 An element $\alpha \in C^p(\sU, \shF)$ is determined by giving an element $\alpha_{i_0, \cdots, i_p} \in \shF(U_{i_0, \cdots, i_p})$ for each $(p + 1)$-tuple, we define the differential as 
@@ -303,7 +306,7 @@ $$ \check{H}^p(\sU, \shF) = h^p(C^\cdot (\sU, \shF)) $$
 Keeping $X$ and $\sU$ fixed, it is not the case that a short exact sequence 
 $ 0 \to \shF' \to \shF \to \shF'' \to 0$ will give a long exact sequence of \Cech cohomology groups. That is, $\check{H}^p(\sU, \cdot)$ does not form a $\delta$-functor. For example, if $\sU = (X)$, then this results from the fact that the global section functor $\Gamma(X, \cdot)$ is not exact. 
 
-\subparagraph{Example} We compute the \Cech cohomology of $X = \IP^1_k$, $\shF = \Ohm$ the sheaf of differentials. Let $\sU = \{ U_1, U_2 \}$ be the normal cover by two affine sets.  Then 
+\paragraph{Example} We compute the \Cech cohomology of $X = \IP^1_k$, $\shF = \Ohm$ the sheaf of differentials. Let $\sU = \{ U_1, U_2 \}$ be the normal cover by two affine sets.  Then 
 \begin{align*}
 C^0 &= \Gamma(U_1, \Ohm) \times \Gamma(U_2, \Ohm) = (k[x] dx) \times (k[y] dy) \\
 C^1 &= \Gamma(U_1 \cap U_2, \Ohm) = k[x, \frac{1}{x}] dx 
@@ -357,7 +360,7 @@ is exact. Since $\shG$ is flasque, $\cH^p(\sU, \shG) = 0$ for all $p \ge 1$. The
 Five lemma says that $\cH^1(\sU, \shF) \to H^1(X, \shF)$ is also an isomorphism. Finally note that $\shR$ is also quasi-coherent, so we obtain the result by induction. 
 
 
-\paragraph{Cohomology of projective space}
+\section{Cohomology of projective space}
 We compute explicitly the cohomology of sheaves $\sO(n)$ on a projective space, by using \Cech cohomology. Let $A$ be a noetherian ring, $S = A[x_0, \cdots, x_r]$ and let $X = \Proj S$ be the projective space $\IP_A^r$ over $A$. 
 
 Recall that the natural map $S \to \Gamma_*(\sO_X) = \oplus_{n \in \IZ} H^0(X, \sO_X(n))$ is an isomorphism. 
@@ -370,6 +373,61 @@ Recall that the natural map $S \to \Gamma_*(\sO_X) = \oplus_{n \in \IZ} H^0(X, \
 \end{enumerate}
 \end{theorem}
 
+
+For any sheaf $\shF$ on a projective $A$-scheme $X$, we can find a surjection
+$\oplus_j \sO(m) \to \shF$, and hence an exact sequence 
+$$ 0 \to \shG \to \oplus_j \sO(m) \to \shF \to 0$$ 
+for some coherent sheaf $\shG$.  
+
+We can use this to show that for each $r$, $H^r(X, \shF)$ is a coherent (i.e. finitely generated) $A$-module. Because cohomology of a closed scheme can be computed on the ambient projective, we can readily reduce to the case $X = \IP_A^n$ for some $n$. 
+The long exact sequence gives 
+$$ \cdots \to H^{n - 1}(\IP_A^n, \shF) \to H^n(\IP_A^n, \shG) \to H^n(\IP_A^n, \oplus_j \sO(m)) \to H^n(\IP_A^n, \shF) \to 0 $$
+The sequence stops since $\dim \IP^n_A = n$. Now since $H^n(\IP_A^n, \oplus_j \sO(m))$ is finitely generated, so is $H^n(\IP_A^n, \shF)$. Therefore we have shown that for all coherent sheaves, the top cohomology is finitely generated. In particular, $H^n(\IP_A^n, \shG)$ is finitely generated. Recall that a finitely generated module over a notherian ring is noetherian and all submodules of a noetherian module are finitely generated. If we have an exact sequence $0 \to M' \to M \to M'' \to 0$ of modules, then if $M', M''$ are finitely generated, then $M$ is also finitely generated. Therefore the part on the exact sequence 
+$$ \cdots \to H^{n - 1}(\IP_A^n, \oplus_j \sO(m)) \to H^{n - 1}(\IP_A^n, \shF) \to H^n(\IP_A^n, \shG) \to \cdots $$
+implies that $H^{n - 1}(\IP_A^n, \shF)$ is finitely generated. Now the inductive pattern is clear. Now twist the short exact sequence $0 \to \shF \to \oplus_j \sO(m) \to \shG \to 0$ by $\sO(N)$. For $N > > 0$, we have that 
+$$ H^n(\IP_A^n, \oplus_j \sO(m + N)) = \oplus_j H^n(\IP_A^n,\sO(m + N)) = 0$$
+Therefore $H^n(\IP_A^n, \shF(N)) = 0$. This is true for $\shG(N)$ as well. Therefore $H^{n - 1}(\IP_A^n, \shF(N)) = 0$. Now we can again induct downwards. Note that this time the induction stops at $r = 0$ since it is note true that $H^0(\IP_A^n, \sO(m + N)) = 0$ when $N$ is large - quite the opposite. Therefore we have that $H^r(\IP_A^n, \shF(N)) = 0$ for each $r \ge 1$ when $N$ is sufficiently large. This is the Serre vanishing theorem
+\begin{theorem}
+Let $X$ be a projective scheme over a noetherian ring $A$ and $\shF$ a coherent sheaf on $X$. Then 
+\begin{enumerate}[a.]
+\item for each $i \ge 0$, $H^i(X, \shF)$ is a finitely generated $A$-module. 
+\item there is an integer $n_0$, depending on $\shF$, such that for each $i > 0$, and each $n \ge n_0$, $H^i(X, \shF(n)) = 0$. 
+\end{enumerate}
+\end{theorem}  
+
+As a corollary, we see that $H^0(X, \shF) = \Gamma(X, \shF)$ is finite dimensional if $X$ is projective and $\shF$ is coherent. Remember how much pain and effort it took when this fact was proved in Chapter 2!
+
+
+
+As an application, we give a cohomological criterion for an invertible sheaf $\shL$ to be ample. Recall that we call an invertible sheaf \textit{ample} if for every coherent sheaf $\shF$ on $X$, there is an integer $n_0 > 0$, depending on $\shF$ such that for every $n \ge n_0$, the sheaf $\shF \tensor \shL^n$ is generated by global section, and we have the following theorem 
+\begin{theorem}
+Let $X$ be a scheme of finite type over a notherian ring $A$ and $\shL$ be an invertible sheaf on $X$. Then $\shL$ is ample if and only if $\shL^m$ is very ample over $\Spec A$ for some $m > 0$. 
+\end{theorem}
+
+Now we show the converse. Let $P$ be a closed point, and let $\shI_P$ be the ideal sheaf of $P$. Then there is an exact sequence
+$$ 0 \to \shI_P \shF \to \shF \to \shF \tensor k(P) \to 0 $$
+where $k(P)$ is the skyscraper sheaf $\sO_X/\shI_P$. Tensoring with $\shL^n$, we get 
+$$ 0 \to \shI_P \shF \tensor \shL^n \to \shF \tensor \shL^n \to \shF \tensor k(P) \tensor \shL^n \to 0 $$
+By the hypothesis, there is an $n_0$ such that $H^1(X, \shI_P \shF \tensor \shL^n) = 0$ for all $n \ge n_0$. Therefore 
+$$ \Gamma(X, \shF \tensor \shL^n) \onto \Gamma(X, \shF \tensor \shL^n \tensor k(P)) $$
+Recall what the skyscraper sheaf is like: if $U$ contains the point, then $\Gamma(U, k(P)) = \sO_P/\fm_P = \kappa(P)$; otherwise, it is zero. Now apply Nakayama's lemma to the local ring $\sO_P$, we see that the stalk of $\shF \tensor \shL^n$ at $P$ is generted by global sections. In fact, this is true for a neighborhood $U$ of $P$ by the geometric Nakayama, i.e. the global sections of $\shF \tensor \shL^n $ generate the sheaf at every point in $U$. 
+
+In particular, take $\shF = \sO_X$, we find there is an integer $n_1 > 0$ and an open neighborhood $V$ of $P$ such that $\shL^{n_1}$ is generated by global sections over $V$. For each $r = 0, 1, \cdots, n_1 - 1$, we can similarly find a neighborhood $U_r$ of $P$ such that $\shF \tensor \shL^{n_0 + r}$ is generated by global sections over $U_r$. Now let $U_P = V \cap U_0 \cap \cdots \cap U_{n_1 - 1}$. Then over $U_P$, all sheaves $\shF \tensor \shL^n$ for $n \ge n_0$ are generated by global sections. Now we can cover $X$ with finitely many such $U_P$'s and increase $n_0$ such that it is large enough for all open subsets in the cover.  
+
+\paragraph{Exercise 4.7}
+We compute the \Cech cohomomology of a plane curve $X \subseteq \IP^2_k$ described by a single degree $d$ homogeneous polynomial $f(x_0, x_1, x_2)$, which is not necessarily irreducible. Assume that $(1, 0, 0) \not\in X$, which implies that $x_1, x_2$ does not divide $f(x_0, x_1, x_2)$. Let $U = X \cap \{ x_1 \neq 0 \}$, $V = X \cap \{ x_2 \neq 0 \}$. Since $\IP^2 - \{ x_1 \neq 0\} \cup \{ x_2 \neq 0 \} = \{ (1, 0, 0)\}$, we see that $X$ is covered by two affine subsets $U, V$. \Cech cohomology is computed by consider the map 
+$$ d : \Gamma(U, \sO_X) \oplus \Gamma(V, \sO_X) \to \Gamma(U \cap V, \sO_X) $$
+\begin{align*}
+\Gamma(U, \sO_X) &= k[\frac{x_0}{x_1}, \frac{x_2}{x_0}]/(\frac{f}{x_1^d}) \, \, \, \, \, \,
+\Gamma(V, \sO_X) = k[\frac{x_0}{x_2}, \frac{x_1}{x_2}]/(\frac{f}{x_2^d}) \\
+\Gamma(U \cap V, \sO_X) &= k[\frac{x_0}{x_1}, \frac{x_2}{x_0}, \frac{x_0}{x_2}, \frac{x_1}{x_2}]/(\{ \frac{f(x_0, x_1, x_2)}{x_1^{k_1} x_2 ^{k_2}} : k_1 + k_2 = d \}) 
+\end{align*}
+Now clearly $H^0(X, \sO_X) = \ker d = k$. To compute $H^1(X, \sO_X) = \mathrm{coker\,} d$, we set $a = x_0/x_1$ and $b = x_0/x_2$. Now
+$$ \Gamma(U \cap V, \sO_X) = k[a, b, \frac{a}{b}, \frac{b}{a}]/ (g_{k_1, k_2}(a, b) : k_1 + k_2 = d )$$
+where $g_{k_1, k_2}(a, b)$ is obtained from $f(x_0, x_1, x_2)/x_1^{k_1} x_2^{k_2}$. Note that $\deg g = d$ in $a, b$ since $f$ contains a linear term $x_0^d$. The image of $d$ is spanned by those polynomials either in $a, a/b$ solely or in $b, b/a$ solely. Therefore we see that 
+$$ \coker d = (k[a, b] - k[a] - k[b])/(g_{k_1, k_2}(a, b) : k_1 + k_2 = d ) $$
+which we can, after some thought, identify with the linear space spanned by the degree $d - 1$ polynomials in $k[a, b] - k[a] - k[b]$. Therefore we can easily compute that 
+$$ \dim H^1(X, \sO_X) = \frac{1}{2} (d - 1)(d - 2) $$
 
 
 
